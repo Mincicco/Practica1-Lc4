@@ -1,5 +1,7 @@
 import Calendar from "react-calendar";
 import React, { useState } from "react";
+import { appointments } from "../services/appointments";
+import AppointmentCard from "./AppointmentCard";
 
 const Agenda = () => {
   const [date, setDate] = useState(new Date());
@@ -8,12 +10,24 @@ const Agenda = () => {
     setDate(newDate);
     console.log(newDate);
   };
+
+  const appointmentsOnDate = appointments.filter(
+    (appointment) =>
+      new Date(appointment.date).toDateString() === date.toDateString()
+  );
+
   return (
-    <div className="App">
-      <h1>Calendario React</h1>
+    <div>
       <Calendar onChange={handleDateChange} value={date} />
-      <p>Fecha seleccionada: {date.toDateString()}</p>
-      <div></div>
+      <div>
+        {appointmentsOnDate.length === 0 ? ( 
+          <p>No hay turnos</p>
+        ) : (
+          appointmentsOnDate.map((appointment, index) => (
+            <AppointmentCard key={index} appointment={appointment} />
+          ))
+        )}
+      </div>
     </div>
   );
 };

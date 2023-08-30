@@ -1,7 +1,16 @@
 import React from "react";
+import { appointments } from "../services/appointments";
 
-function AppointmentCard() {
-  return <div>AppointmentCard</div>;
+function AppointmentCard({ appointment }) {
+  return (
+    <div>
+      <h3>{appointment.petName}</h3>
+      <p>Fecha: {new Date(appointment.date).toLocaleDateString()}</p>
+      <p>Animal: {appointment.animal}</p>
+      <p>Motivo: {appointment.motive}</p>
+      <p>Comentario: {appointment.comment}</p>
+    </div>
+  );
 }
 
 export default AppointmentCard;
