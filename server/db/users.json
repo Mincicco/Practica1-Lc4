@@ -70,5 +70,13 @@
     "familias_asignadas": null,
     "patentes_individuales_asignadas": null,
     "patentes_por_familia_asignadas": null
+  },
+  {
+    "id": 10,
+    "email": "yawele5018@xgh6.com",
+    "tipo_usuario": "PROFESIONAL",
+    "familias_asignadas": null,
+    "patentes_individuales_asignadas": null,
+    "patentes_por_familia_asignadas": null
   }
 ]

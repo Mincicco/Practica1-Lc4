@@ -1,4 +1,4 @@
-{
+{         
 	"categories": [
 		{ "id": 1, "categoria_producto": "Literas", "icono": "🛏️" },
 		{ "id": 2, "categoria_producto": "Comida de perro", "icono": "🦴" },
