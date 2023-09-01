@@ -4,11 +4,14 @@ import { appointments } from "../services/appointments";
 import AppointmentCard from "./AppointmentCard";
 
 const Agenda = () => {
+  const [isOnDate, setIsOnDate] = useState(null);
+
   const [date, setDate] = useState(new Date());
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
-    console.log(newDate);
+    setIsOnDate(true)
+    
   };
 
   const appointmentsOnDate = appointments.filter(
@@ -20,7 +23,7 @@ const Agenda = () => {
     <div>
       <Calendar onChange={handleDateChange} value={date} />
       <div>
-        {appointmentsOnDate.length === 0 ? ( 
+        {isOnDate && appointmentsOnDate.length === 0 ? ( 
           <p>No hay turnos</p>
         ) : (
           appointmentsOnDate.map((appointment, index) => (
