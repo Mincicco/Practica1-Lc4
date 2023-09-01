@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 
 import 'react-calendar/dist/Calendar.css';
+import "./Agenda.css";
 
 import { appointments } from "../services/appointments";
 import AppointmentCard from "./AppointmentCard";
@@ -20,10 +21,20 @@ const Agenda = () => {
       new Date(appointment.date).toDateString() === date.toDateString()
   );
 
+  const tileContent = ({ date }) => {
+   
+    const hasAppointment = appointments.some(
+      (appointment) =>
+        new Date(appointment.date).toDateString() === date.toDateString()
+    );
+
+    return hasAppointment ? <div className="highlighted-date"></div> : null;
+  };
+
   return (
     <>
       <section className="flex m-2 p-1 items-center justify-center">
-        <Calendar onChange={handleDateChange} value={date} />
+        <Calendar onChange={handleDateChange} value={date} tileContent={tileContent}/>
       </section>
 
       <section className="flex flex-col border-2 rounded-md">
