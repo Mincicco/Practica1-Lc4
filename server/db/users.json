@@ -94,5 +94,13 @@
     "familias_asignadas": null,
     "patentes_individuales_asignadas": null,
     "patentes_por_familia_asignadas": null
+  },
+  {
+    "id": 13,
+    "email": "fijav79053@synclane.com",
+    "tipo_usuario": "PROFESIONAL",
+    "familias_asignadas": null,
+    "patentes_individuales_asignadas": null,
+    "patentes_por_familia_asignadas": null
   }
 ]
